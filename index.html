@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Form</title>
+</head>
+<body>
+    <form novalidate>
+    <!-- <form action="#" name="data-form"> -->
+        <h1>Form</h1>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+        <section>
+            <h2>User information</h2>
+            <ul>            
+                <li>                        
+                    <label for="mail">E-mail<strong><abbr title="required">*</abbr></strong>:</label>
+                    <input type="email" id="mail" name="mail" required minlength="5">              
+                    <span class="error" aria-live="polite"></span>
+                </li>
+                <li>
+                    <label for="country">Country<strong><abbr title="required">*</abbr></strong>:</label>
+                    <input type="text" id="country" name="country" required>
+                    <span class="error" aria-live="polite"></span>
+                </li>
+                <li>
+                    <label for="zip">Zip Code<strong><abbr title="required">*</abbr></strong>:</label>
+                    <input type="text" id="zip" name="zip" required pattern="\d*" minlength="4">
+                    <span class="error" aria-live="polite"></span>
+                </li>
+                <li>
+                    <label for="pwd">Password<strong><abbr title="required">*</abbr></strong>:</label>
+                    <input type="password" id="pwd" name="pwd" required minlength="8">
+                    <span class="error" aria-live="polite"></span>
+                </li>
+                <li>
+                    <label for="rp-pwd">Repeat password<strong><abbr title="required">*</abbr></strong>:</label>
+                    <input type="password" id="rp-pwd" name="rp-pwd"required> 
+                    <span class="error" aria-live="polite"></span>          
+                </li>
+                 
+            </ul>
+        </section>
+        <section>
+            <h2>User gender</h2>
+            <fieldset>
+                <legend>Gender<strong><abbr title="required">*</abbr></strong></legend>
+                <ul>
+                    <li>
+                        <label for="male">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                          Male
+                        </label>
+                </li>
+                    <li>
+                        <label for="female">
+                            <input type="radio" id="female" name="gender" value="female" required>
+                            Female
+                        </label>
+                        
+                    </li>
+                </ul>
+                
+                
+            </fieldset>
+            <span class="error" id="gender-error" aria-live="polite"></span>
+        </section>
+
+        
+        
+        <ul>
+             <li>
+            <button type="submit">Submit</button>
+         </li>
+        </ul>
+
+       
+    </form>
+
+   <script src="script.js"></script> 
+</body>
+</html>
