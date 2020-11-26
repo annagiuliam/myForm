@@ -16,27 +16,27 @@
             <ul>            
                 <li>                        
                     <label for="mail">E-mail<strong><abbr title="required">*</abbr></strong>:</label>
-                    <input type="email" id="mail" name="mail" required minlength="5">              
+                    <input type="email" class="invalid" id="mail" name="mail" required minlength="5">              
                     <span class="error" aria-live="polite"></span>
                 </li>
                 <li>
                     <label for="country">Country<strong><abbr title="required">*</abbr></strong>:</label>
-                    <input type="text" id="country" name="country" required>
+                    <input type="text" class="invalid" id="country" name="country" required>
                     <span class="error" aria-live="polite"></span>
                 </li>
                 <li>
                     <label for="zip">Zip Code<strong><abbr title="required">*</abbr></strong>:</label>
-                    <input type="text" id="zip" name="zip" required pattern="\d*" minlength="4">
+                    <input type="text" class="invalid" id="zip" name="zip" required pattern="\d*" minlength="4">
                     <span class="error" aria-live="polite"></span>
                 </li>
                 <li>
                     <label for="pwd">Password<strong><abbr title="required">*</abbr></strong>:</label>
-                    <input type="password" id="pwd" name="pwd" required minlength="8">
+                    <input type="password" class="invalid" id="pwd" name="pwd" required minlength="8">
                     <span class="error" aria-live="polite"></span>
                 </li>
                 <li>
                     <label for="rp-pwd">Repeat password<strong><abbr title="required">*</abbr></strong>:</label>
-                    <input type="password" id="rp-pwd" name="rp-pwd"required> 
+                    <input type="password" class="invalid" id="rp-pwd" name="rp-pwd"required> 
                     <span class="error" aria-live="polite"></span>          
                 </li>
                  
@@ -49,13 +49,13 @@
                 <ul>
                     <li>
                         <label for="male">
-                        <input type="radio" id="male" name="gender" value="male" required>
+                        <input type="radio" class="invalid" id="male" name="gender" value="male" required>
                           Male
                         </label>
                 </li>
                     <li>
                         <label for="female">
-                            <input type="radio" id="female" name="gender" value="female" required>
+                            <input type="radio" class="invalid" id="female" name="gender" value="female" required>
                             Female
                         </label>
                         
@@ -71,7 +71,7 @@
         
         <ul>
              <li>
-            <button type="submit">Submit</button>
+            <button type="submit" id="submit-btn">Submit</button>
          </li>
         </ul>
 

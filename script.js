@@ -1,4 +1,5 @@
 const form  = document.querySelector('form');
+const submitBtn = document.querySelector('#submit-btn');
 const email = document.querySelector('#mail');
 const country = document.querySelector('#country');
 const zipCode = document.querySelector('#zip');
@@ -6,7 +7,6 @@ const password = document.querySelector('#pwd');
 const rpPwd = document.querySelector('#rp-pwd');
 const genderBtns = document.getElementsByName('gender');
 genderErrorField = document.querySelector('#gender-error');
-
 
 
 email.addEventListener('input', () => {
@@ -43,29 +43,39 @@ genderBtns.forEach((btn) => {
 
 form.addEventListener('submit', (event) => {
 
+    const invalidFields = document.querySelectorAll('.invalid');
     if (!email.validity.valid) {
         showError(email);
         event.preventDefault();
 
-    } else if (!country.validity.valid) {
+    } 
+     if (!country.validity.valid) {
         showError(country);
         event.preventDefault();
-    } else if (!zipCode.validity.valid) {
+    } 
+     if (!zipCode.validity.valid) {
         showError(zipCode);
         event.preventDefault();
-    } else if (!password.validity.valid) {
+    } 
+     if (!password.validity.valid) {
         showError(password);
         event.preventDefault();
-    } else if (!rpPwd.validity.valid || rpPwd.value != password.value) {
+    } 
+     if (!rpPwd.validity.valid || rpPwd.value != password.value) {
         showError(rpPwd);
         event.preventDefault();
-    } else if (!genderBtns[0].checked && !genderBtns[1].checked) {
+    } 
+     if (!genderBtns[0].checked && !genderBtns[1].checked) {
         showGenderError();
         event.preventDefault();
-    } else {
-        alert("Form submitted succesfully!")
-    }
+    }  
+
+    if (invalidFields.length === 0) {
+        alert("Form submitted succesfully!") ; 
+    }    
+    
 })
+
 
 function showError(inputField ){
     const errorField = document.querySelector(`#${inputField.id} + span.error`);
@@ -124,13 +134,16 @@ function checkValidity(inputField) {
         inputField.classList.remove('invalid');
         errorField.textContent = '';
         errorField.className = 'error';
+        
     } else {
         showError(inputField);
+        
     }
 
     if (inputField === rpPwd) {        
         if (rpPwd.value != password.value) {
             showError(inputField);
+            
         }
     }
 }
